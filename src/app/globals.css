@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* Apply a border-box sizing globally */
+    * {
+      box-sizing: border-box;
+    }
+  }

@@ -1,5 +1,5 @@
 import React from 'react'
-import Sidebar from '../../(admin-components)/sidebar'
+import Sidebar from '../(admin-components)/sidebar'
 
 const page = () => {
   return (

@@ -38,7 +38,7 @@ const Navbar = () => {
         <Link href="/">Home</Link>
         <Link href="/menu">Menu</Link>
         <Link href="/service">Service</Link>
-        <Link href="/shop">Shop</Link>
+        <Link href="/cart">Cart</Link>
       </div>
       <div className="flex items-center w-full md:w-[300px] h-[35px] bg-white rounded-[10px] shadow mt-2 md:mt-0">
         <Image

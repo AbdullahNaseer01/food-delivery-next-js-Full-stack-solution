@@ -1,5 +1,5 @@
 import React from 'react'
-import Sidebar from '../(admin-components)/sidebar'
+import Sidebar from '../(admin-components)/Sidebar'
 import ProductForm from '../(admin-components)/ProductForm'
 import ProductTable from '../(admin-components)/ProductTable'
 

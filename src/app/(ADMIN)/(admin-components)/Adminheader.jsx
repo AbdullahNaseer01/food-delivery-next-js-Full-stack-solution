@@ -4,7 +4,7 @@ import { RiMenu2Line, RiDeleteBinLine } from 'react-icons/ri';
 
 const AdminHeader = ({toggleMenu}) => {
   return (
-    <header className="sm:fixed right-0 top-0 sm:left-60 bg-yellow-50 py-3 px-4 h-16">
+    <header className="sm:fixed right-0 top-0 sm:left-60 bg-gradient-to-r from-customOrange to-customLightOrange py-3 px-4 h-16">
         <div className='text-2xl sm:hidden flex justify-end' onClick={toggleMenu}><RiMenu2Line /></div>
 
         <div className="hidden  sm:inline max-w-4xl mx-auto">

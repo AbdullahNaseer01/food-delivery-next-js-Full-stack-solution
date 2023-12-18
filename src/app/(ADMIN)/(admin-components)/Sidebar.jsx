@@ -14,7 +14,7 @@ const Sidebar = ({ isMenuToggle, signOut }) => {
           <div className="flex-grow">
             <div className="px-4 py-6 text-center border-b">
               <h1 className="text-xl font-bold leading-none">
-                <span className="text-yellow-700">Admin</span> Panel
+                <span className="text-customOrange">Admin</span> Panel
               </h1>
             </div>
             <div className="p-4">
@@ -22,7 +22,7 @@ const Sidebar = ({ isMenuToggle, signOut }) => {
               <li>
                   <Link
                     href="/adminpanel"
-                    className={`flex items-center ${pathname === "/adminpanel" ? "bg-yellow-200 rounded-xl font-bold text-sm text-yellow-900 py-3 px-4" : " bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4"}`}
+                    className={`flex items-center ${pathname === "/adminpanel" ? "bg-gradient-to-r from-customOrange to-customLightOrange rounded-xl font-bold text-sm text-white py-3 px-4" : " bg-white hover:bg-customLightOrange rounded-xl font-bold text-sm text-gray-900 py-3 px-4"}`}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ const Sidebar = ({ isMenuToggle, signOut }) => {
                 <li>
                   <Link
                     href="/adminpanel/addproduct"
-                    className={`flex items-center ${pathname === "/adminpanel/addproduct" ? "bg-yellow-200 rounded-xl font-bold text-sm text-yellow-900 py-3 px-4" : " bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4"}`}
+                    className={`flex items-center ${pathname === "/adminpanel/addproduct" ? "bg-gradient-to-r from-customOrange to-customLightOrange rounded-xl font-bold text-sm text-white py-3 px-4" : " bg-white hover:bg-customLightOrange rounded-xl font-bold text-sm text-gray-900 py-3 px-4"}`}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ const Sidebar = ({ isMenuToggle, signOut }) => {
                 <li>
                   <Link
                     href="/adminpanel/allproducts"
-                    className={`flex items-center ${pathname === '/adminpanel/allproducts' ? "bg-yellow-200 rounded-xl font-bold text-sm text-yellow-900 py-3 px-4" : " bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4"}`}
+                    className={`flex items-center ${pathname === '/adminpanel/allproducts' ? "bg-gradient-to-r from-customOrange to-customLightOrange rounded-xl font-bold text-sm text-white py-3 px-4" : " bg-white hover:bg-customLightOrange rounded-xl font-bold text-sm text-gray-900 py-3 px-4"}`}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@ const Sidebar = ({ isMenuToggle, signOut }) => {
                 <li>
                   <Link
                     href="/adminpanel/orders"
-                    className={`flex items-center ${pathname === '/adminpanel/orders' ? "bg-yellow-200 rounded-xl font-bold text-sm text-yellow-900 py-3 px-4" : " bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4"}`}
+                    className={`flex items-center ${pathname === '/adminpanel/orders' ? "bg-gradient-to-r from-customOrange to-customLightOrange rounded-xl font-bold text-sm text-white py-3 px-4" : " bg-white hover:bg-customLightOrange rounded-xl font-bold text-sm text-gray-900 py-3 px-4"}`}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +94,7 @@ const Sidebar = ({ isMenuToggle, signOut }) => {
                 <li>
                   <a
                     href=""
-                    className="flex bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4"
+                    className="flex bg-white hover:bg-customLightOrange rounded-xl font-bold text-sm text-gray-900 py-3 px-4"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

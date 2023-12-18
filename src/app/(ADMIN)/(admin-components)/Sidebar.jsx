@@ -22,7 +22,7 @@ const Sidebar = ({ isMenuToggle, signOut }) => {
                 <li>
                   <Link
                     href="/dashboard/addproduct"
-                    className={`flex items-center ${pathname === "/dashboard/addproduct" ? "bg-yellow-200 rounded-xl font-bold text-sm text-yellow-900 py-3 px-4" : " bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4"}`}
+                    className={`flex items-center ${pathname === "/admin/addproduct" ? "bg-yellow-200 rounded-xl font-bold text-sm text-yellow-900 py-3 px-4" : " bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4"}`}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ const Sidebar = ({ isMenuToggle, signOut }) => {
                 <li>
                   <Link
                     href="/dashboard/productsdetails"
-                    className={`flex items-center ${pathname === '/dashboard/productsdetails' ? "bg-yellow-200 rounded-xl font-bold text-sm text-yellow-900 py-3 px-4" : " bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4"}`}
+                    className={`flex items-center ${pathname === '/admin/productsdetails' ? "bg-yellow-200 rounded-xl font-bold text-sm text-yellow-900 py-3 px-4" : " bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4"}`}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ const Sidebar = ({ isMenuToggle, signOut }) => {
                 <li>
                   <Link
                     href="/dashboard/calendar"
-                    className={`flex items-center ${pathname === '/dashboard/calendar' ? "bg-yellow-200 rounded-xl font-bold text-sm text-yellow-900 py-3 px-4" : " bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4"}`}
+                    className={`flex items-center ${pathname === '/admin/calendar' ? "bg-yellow-200 rounded-xl font-bold text-sm text-yellow-900 py-3 px-4" : " bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4"}`}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

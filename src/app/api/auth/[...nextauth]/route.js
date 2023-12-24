@@ -29,6 +29,7 @@ const authOptions = {
     ]
 }
 
+
 const handler = NextAuth(authOptions)
 
 

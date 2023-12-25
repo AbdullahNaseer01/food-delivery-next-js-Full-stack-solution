@@ -10,7 +10,7 @@ const page = async () => {
 //  if(!user){
 //   redirect("/login")
 //  }
- console.log(user)
+//  console.log(user)
   return (
     <main className=" sm:ml-60 pt-16  max-h-screen overflow-auto  min-h-screen">
       <div className="container items-center px-4 py-8 m-auto mt-5">

@@ -19,3 +19,6 @@ const userSchema = new mongoose.Schema({
     phoneNumber: String,
     // Add any other relevant details for the user
 });
+
+
+export const user = mongoose.models.user || mongoose.model("user", userSchema);

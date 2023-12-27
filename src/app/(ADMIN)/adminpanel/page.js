@@ -11,6 +11,11 @@ const page = async () => {
 //   redirect("/login")
 //  }
 //  console.log(user)
+ const user = await getServerSession()
+ if(!user){
+  console.log(user)
+ }
+ console.log(user)
   return (
     <main className=" sm:ml-60 pt-16  max-h-screen overflow-auto  min-h-screen">
       <div className="container items-center px-4 py-8 m-auto mt-5">

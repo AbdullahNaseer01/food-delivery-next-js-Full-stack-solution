@@ -17,7 +17,6 @@ const userSchema = new mongoose.Schema({
     },
     address: String,
     phoneNumber: String,
-    // Add any other relevant details for the user
 });
 
 

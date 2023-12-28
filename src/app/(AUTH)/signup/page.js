@@ -154,15 +154,15 @@
 //         alert("user registered success")
 //       }
 //     } catch (error) {
-      
+
 //     }
-  
+
 //     // Log user info to console
 //     console.log('User Info:', { username, email, password, address, phoneNumber });
-  
+
 //     // TODO: Add logic to send registration data to the server or perform other actions
 //   };
-  
+
 
 //   return (
 //     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
@@ -360,23 +360,61 @@ const Page = () => {
   });
 
   // Function to handle registration
+  // const handleRegister = async (e) => {
+  //   e.preventDefault()
+  //   // Check if required fields are filled
+  //   console.log('Info:', info);
+  //   if (!info.username || !info.email || !info.password) {
+  //     alert('Please fill in all required fields (Username, Email, Password)');
+  //     return;
+  //   }
+  //   try {
+  //     const res = await fetch("api/userregistration", {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(info),
+  //     });
+  //     if (res.ok) {
+  //       // Reset the form and show success alert
+  //       setInfo({
+  //         username: '',
+  //         email: '',
+  //         password: '',
+  //         address: '',
+  //         phoneNumber: '',
+  //       });
+  //       alert('User registered successfully');
+  //     } else {
+  //       // Handle registration error
+  //       alert('Failed to register user');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error during registration:', error);
+  //     // Handle other errors
+  //   }
+  // };
+
   const handleRegister = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
+
     // Check if required fields are filled
-    console.log('Info:', info);
     if (!info.username || !info.email || !info.password) {
       alert('Please fill in all required fields (Username, Email, Password)');
       return;
     }
+
     try {
-      const res = await fetch("api/register", {
+      const res = await fetch("api/userregistration", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(info),
       });
-      if (res.ok) {
+
+      if (res.status === 200) {
         // Reset the form and show success alert
         setInfo({
           username: '',
@@ -386,15 +424,20 @@ const Page = () => {
           phoneNumber: '',
         });
         alert('User registered successfully');
+      } else if (res.status === 409) {
+        // HTTP status code 409 indicates conflict, meaning the user already exists
+        alert('User with this email or username already exists');
       } else {
-        // Handle registration error
+        // Handle other server errors
         alert('Failed to register user');
       }
     } catch (error) {
       console.error('Error during registration:', error);
       // Handle other errors
+      alert('Internal Server Error');
     }
   };
+
 
 
 
@@ -406,7 +449,7 @@ const Page = () => {
       [field]: value,
     }));
   };
-  
+
   return (
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">

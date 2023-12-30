@@ -6,7 +6,7 @@ export default withAuth(function middleware(req) {
   console.log(req.nextUrl.pathname)
 
   if (req.nextUrl.pathname.startsWith("/adminpanel") && req.nextauth.token.role != "admin") {
-    return NextResponse.rewrite(new URL("/", req.url))
+    return NextResponse.redirect(new URL("/", req.url))
   }
 },
 {

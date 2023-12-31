@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
+    "cloudinary": "^1.41.1",
     "mongoose": "^8.0.3",
+    "multer": "^1.4.5-lts.1",
     "next": "14.0.3",
     "next-auth": "^4.24.5",
     "react": "^18",

@@ -10,7 +10,10 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    serving: {
+    availability: {
+        type: String
+    },
+    tagline: {
         type: String
     },
     price: {

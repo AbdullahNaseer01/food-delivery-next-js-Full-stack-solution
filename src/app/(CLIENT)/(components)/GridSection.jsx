@@ -80,7 +80,8 @@ const GridSection = async () => {
                 {products &&
                     products.map((product) => (
                         <GridSectionCard
-                            key={product.id}
+                            key={product._id}
+                            id={product._id}
                             title={product.title}
                             imageUrl={product.imageUrl}
                             price={product.price}

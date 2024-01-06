@@ -66,6 +66,9 @@ const fetchProducts = async () => {
     }
 };
 
+
+
+
 const GridSection = async () => {
     const products = await fetchProducts();
 
@@ -90,8 +93,6 @@ const GridSection = async () => {
                 }
 
             </section>
-
-
             <div className='mt-10'>
                 <ViewProductsBtn />
             </div>

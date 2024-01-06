@@ -36,13 +36,33 @@ export async function POST(req, res) {
 
 export async function GET(req, res) {
     try {
-        const products = await Product.find();
+        console.log(req.query)
+        const products = await Product.find({category:"fruits"});
         return NextResponse.json(products, { status: 200 });
     } catch (error) {
         console.error('Error fetching products:', error);
         return NextResponse.json({ success: false, message: 'Internal Server Error' }, { status: 500 });
     }
 }
+
+
+// export async function GET(req, res) {
+//     try {
+//         console.log(req.params)
+//         const category = req.query
+//         const products = await Product.find({ category: category });
+//         return NextResponse.json(products, { status: 200 });
+//     } catch (error) {
+//         NextResponse.json("no product found")
+//     }
+// }
+
+
+
+
+
+
+
 
 
 

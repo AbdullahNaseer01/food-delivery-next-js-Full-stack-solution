@@ -7,10 +7,10 @@ dbConnect();
 export async function POST(req, res) {
     try {
         const payload = await req.json();
-        const { title, description, category, price, imageUrl, tagline ,availability } = payload;
+        const { title, description, category, price, image, tagline, availability } = payload;
         console.log('Received values:', payload);
 
-        if (!title || !description || !category || !price || !imageUrl || !tagline || !availability) {
+        if (!title || !description || !category || !price || !image || !tagline || !availability) {
             return NextResponse.json({ success: false, message: "Please fill all the required fields" }, { status: 422 });
         }
 
@@ -21,7 +21,7 @@ export async function POST(req, res) {
             availability: payload.availability,
             category: payload.category,
             price: payload.price,
-            imageUrl: payload.imageUrl,
+            image: payload.image,
         });
         console.log("saved product", product)
 
@@ -33,6 +33,27 @@ export async function POST(req, res) {
         return NextResponse.json({ success: false, message: 'Internal Server Error' }, { status: 500 });
     }
 }
+
+export async function GET(req, res) {
+    try {
+        const products = await Product.find();
+        return NextResponse.json(products, { status: 200 });
+    } catch (error) {
+        console.error('Error fetching products:', error);
+        return NextResponse.json({ success: false, message: 'Internal Server Error' }, { status: 500 });
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

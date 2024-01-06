@@ -271,68 +271,74 @@ const AddProductForm = () => {
     };
 
     // const handleAddProduct = async (event) => {
-    //     event.preventDefault()
-    //     const imageUrl = await imageUplaod();
-    //     console.log("image", imageUrl)
-    //     setFormData({
-    //         ...formData,
-    //         image: imageUrl
-    //     })
-
-    //     console.log("formdatatosend now", formData)
-    // }
-
-    // const handleAddProduct = async (event) => {
     //     event.preventDefault();
-    //     setLoading(true);
     //     const imageUrl = await imageUplaod();
-    //     setFormData({
-    //       ...formData,
-    //       image: imageUrl,
-    //     });
-    //     setLoading(false);
+    //         setFormData({
+    //             ...formData,
+    //             image: imageUrl
+    //         });
+    //     // Log the updated formData
+    //     console.log("form data",formData)
     
-    //     // console.log("formdatatosend now", formData);
-    //   };
+    //     // Call the real API with the updated formData
+    //     try {
+    //         const response = await fetch("http://localhost:3000/api/products", {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //                 // Add any other headers as needed
+    //             },
+    //             body: JSON.stringify(formData),
+    //         });
+    
+    //         // Handle the API response
+    //         if (response.ok) {
+    //             // API call successful, handle success case
+    //             console.log("API call successful");
+    //         } else {
+    //             // API call failed, handle error case
+    //             console.error("API call failed:", response.status, response.statusText);
+    //         }
+    //     } catch (error) {
+    //         // Handle any network or other errors
+    //         console.error("Error in API call:", error);
+    //     }
+    // };
 
-    //   useEffect(() => {
-    //     console.log("formdatatosend now", formData);
-    // }, [formData]);
 
-
-    const handleAddProduct = async (event) => {
-        event.preventDefault();
+const handleAddProduct = async (event) => {
+    event.preventDefault();
+    
+    try {
         const imageUrl = await imageUplaod();
-            setFormData({
-                ...formData,
-                image: imageUrl
-            }, resolve);
-        // Log the updated formData
-    
+        
         // Call the real API with the updated formData
-        try {
-            const response = await fetch("http://localhost:3000/api/products", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    // Add any other headers as needed
-                },
-                body: JSON.stringify(formData),
-            });
-    
-            // Handle the API response
-            if (response.ok) {
-                // API call successful, handle success case
-                console.log("API call successful");
-            } else {
-                // API call failed, handle error case
-                console.error("API call failed:", response.status, response.statusText);
-            }
-        } catch (error) {
-            // Handle any network or other errors
-            console.error("Error in API call:", error);
+        const response = await fetch("http://localhost:3000/api/products", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                // Add any other headers as needed
+            },
+            body: JSON.stringify({
+                ...formData,
+                image: imageUrl,
+            }),
+        });
+
+        // Handle the API response
+        if (response.ok) {
+            // API call successful, handle success case
+            console.log("API call successful");
+        } else {
+            // API call failed, handle error case
+            console.error("API call failed:", response.status, response.statusText);
         }
-    };
+    } catch (error) {
+        // Handle any network or other errors
+        console.error("Error in API call:", error);
+    }
+};
+
 
     useEffect(() => {
         // Log the updated formData

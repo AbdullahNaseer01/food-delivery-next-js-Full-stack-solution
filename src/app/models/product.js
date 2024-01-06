@@ -20,7 +20,7 @@ const productSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    imageUrl: String,
+    image: String,
     // Add any other relevant details for your food product
 });
 

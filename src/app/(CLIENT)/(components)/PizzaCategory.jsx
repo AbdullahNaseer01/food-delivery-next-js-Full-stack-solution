@@ -19,7 +19,7 @@ const PizzaCategory = async () => {
   const products = await fetchProducts();
   return (
     <>
-    <>Pizzas Category</>
+    <p>Pizzas Category</p>
     <div className='md:mx-16 w-fit mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5'>
       {products &&
         products.map((product) => (
@@ -43,7 +43,8 @@ const PizzaCategory = async () => {
                   <del>
                     <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
                   </del>
-                  <AddtoCartBtn />
+                  <AddtoCartBtn product={product} />
+
                 </div>
               </div>
             </Link>

@@ -24,7 +24,7 @@ const BurgerCategory = async () => {
       {products &&
         products.map((product) => (
           <div key={product._id} className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-            <Link href="#">
+            <div>
               <img
                 alt="Product"
                 src={product.image}
@@ -43,10 +43,12 @@ const BurgerCategory = async () => {
                   <del>
                     <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
                   </del>
-                  <AddtoCartBtn />
+                  {/* <AddtoCartBtn /> */}
+                  {/* <AddtoCartBtn product={product} /> */}
+                  {product && <AddtoCartBtn product={product} />}
                 </div>
               </div>
-            </Link>
+            </div>
           </div>
 
         ))

@@ -55,7 +55,7 @@ import ViewProductsBtn from './ViewProductsBtn';
 
 const fetchProducts = async () => {
     try {
-        const response = await fetch("http://localhost:3000/api/products", { cache: 'no-store' }, {
+        const response = await fetch("http://localhost:3000/api/products?category=water", { cache: 'no-store' }, {
             method: "GET"
         });
         const products = await response.json();
@@ -65,9 +65,6 @@ const fetchProducts = async () => {
         console.error(error);
     }
 };
-
-
-
 
 const GridSection = async () => {
     const products = await fetchProducts();
@@ -91,12 +88,10 @@ const GridSection = async () => {
                         />
                     ))
                 }
-
             </section>
             <div className='mt-10'>
                 <ViewProductsBtn />
             </div>
-
         </>
     );
 };

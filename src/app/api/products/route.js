@@ -34,22 +34,23 @@ export async function POST(req, res) {
     }
 }
 
-export async function GET(req, res) {
-    try {
-        console.log(req.query)        
-        const products = await Product.find({ category: "fruits" });
-        return NextResponse.json(products, { status: 200 });
-    } catch (error) {
-        console.error('Error fetching products:', error);
-        return NextResponse.json({ success: false, message: 'Internal Server Error' }, { status: 500 });
-    }
-}
+// export async function GET(req, res) {
+//     try {
+//         console.log(req)
+//         console.log(req.query)        
+//         const products = await Product.find({ category: "fruits" });
+//         return NextResponse.json(products, { status: 200 });
+//     } catch (error) {
+//         console.error('Error fetching products:', error);
+//         return NextResponse.json({ success: false, message: 'Internal Server Error' }, { status: 500 });
+//     }
+// }
 
 
 // export async function GET(req, res) {
 //     try {
-//         console.log(req.params)
-//         const category = req.query
+//         console.log("req.search:",req.searchParams)
+//         const category = req.searchParams
 //         const products = await Product.find({ category: category });
 //         return NextResponse.json(products, { status: 200 });
 //     } catch (error) {
@@ -61,6 +62,45 @@ export async function GET(req, res) {
 
 
 
+
+
+
+// export async function GET(req, res) {
+//     try {
+//         const category = req.nextUrl.searchParams.get('category'); // Access the category value
+ 
+//         if (!category) {
+//             return NextResponse.json({ error: "Missing category parameter" }, { status: 400 });
+//         }
+ 
+//         const products = await Product.find({ category }); // Use the category value in the query
+//         return NextResponse.json(products, { status: 200 });
+//     } catch (error) {
+//         return NextResponse.json({ error: "no product found" }, { status: 404 });
+//     }
+//  }
+ 
+
+export async function GET(req, res) {
+    try {
+        // Get the 'category' query parameter from req.nextUrl.searchParams
+        const category = req.nextUrl.searchParams.get('category');
+
+        // Use a default category if not provided
+        const defaultCategory = "fruits";
+        const effectiveCategory = category || defaultCategory;
+
+        // Fetch products based on the category
+        const products = await Product.find({ category: effectiveCategory });
+
+        // Return the products as JSON response
+        return NextResponse.json(products, { status: 200 });
+    } catch (error) {
+        // Handle errors and return an appropriate response
+        console.error("Error fetching products:", error);
+        return NextResponse.json({ error: "Error fetching products" }, { status: 500 });
+    }
+}
 
 
 

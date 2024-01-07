@@ -50,6 +50,7 @@
 
 
 
+import Link from 'next/link';
 import GridSectionCard from './GridSectionCard';
 import ViewProductsBtn from './ViewProductsBtn';
 
@@ -89,9 +90,9 @@ const GridSection = async () => {
                     ))
                 }
             </section>
-            <div className='mt-10'>
+            <Link href={"/menu"} className='mt-10'>
                 <ViewProductsBtn />
-            </div>
+            </Link>
         </>
     );
 };

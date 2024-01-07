@@ -55,7 +55,7 @@ import ViewProductsBtn from './ViewProductsBtn';
 
 const fetchProducts = async () => {
     try {
-        const response = await fetch("http://localhost:3000/api/products?category=water", { cache: 'no-store' }, {
+        const response = await fetch("http://localhost:3000/api/products?category=fruits", { cache: 'no-store' }, {
             method: "GET"
         });
         const products = await response.json();
@@ -83,7 +83,7 @@ const GridSection = async () => {
                             key={product._id}
                             id={product._id}
                             title={product.title}
-                            imageUrl={product.imageUrl}
+                            imageUrl={product.image}
                             price={product.price}
                         />
                     ))

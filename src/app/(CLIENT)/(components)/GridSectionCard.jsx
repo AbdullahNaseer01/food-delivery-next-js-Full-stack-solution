@@ -11,7 +11,6 @@ const GridSectionCard = ({id, title, imageUrl, price}) => {
                     src='https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                     className="h-80 w-72 object-cover rounded-t-xl"
                 />
-
                 <div className="px-4 py-3 w-72">
                     <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
                     <p className="text-lg font-bold text-black truncate block capitalize">

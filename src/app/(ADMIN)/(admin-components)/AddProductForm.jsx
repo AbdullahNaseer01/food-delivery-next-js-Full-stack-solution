@@ -427,14 +427,14 @@ const handleAddProduct = async (event) => {
 
 
                     <select id="category" onChange={handleCategoryChange} value={formData.category} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
-                        <option value="fruits">Fruits</option>
-                        <option value="vegetables">Vegetables</option>
-                        <option value="canned-food">Canned Food</option>
-                        <option value="bakery-items">Bakery Items</option>
-                        <option value="fishes">Fishes</option>
-                        <option value="egg-and-dairy">Egg and Dairy</option>
-                        <option value="soft-drinks-snacks">Soft Drinks and Snacks</option>
-                        <option value="soft-drinks-snacks">others</option>
+                        <option value="burgers">Burgers</option>
+                        <option value="deals">Deals</option>
+                        <option value="pizzas">Pizzas</option>
+                        <option value="featured">Featured</option>
+                        <option value="pastas">Pasta</option>
+                        <option value="baverages">Baverages</option>
+                        <option value="sides">Sides</option>
+                        {/* <option value="soft-drinks-snacks">others</option> */}
                     </select>
                 </div>
                 <div className="inline-block mt-2 -mx-1 pl-1 w-1/2">

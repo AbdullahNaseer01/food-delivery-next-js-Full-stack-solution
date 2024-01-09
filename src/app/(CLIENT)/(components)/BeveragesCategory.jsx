@@ -19,7 +19,8 @@ const BaveragesCategory = async () => {
   const products = await fetchProducts();
   return (
     <>
-    <p>baverages category</p>
+    
+    <h1 className=' text-3xl mx-auto text-center font-semibold ' >baverages category</h1>
     <div className='md:mx-16 w-fit mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5'>
       {products &&
         products.map((product) => (
@@ -30,13 +31,14 @@ const BaveragesCategory = async () => {
                 src={product.image}
                 className="h-80 w-72 object-cover rounded-t-xl"
               />
+            </Link>
               <div className="px-4 py-3 w-72">
                 <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
                 <p className="text-lg font-bold text-black truncate block capitalize">
                   {product.title}
 
                 </p>
-                <div className="flex items-center">
+                <div className="flex items-center justify-between">
                   <p className="text-lg font-semibold text-black cursor-auto my-3">
                     {product.price}
                   </p>
@@ -46,7 +48,6 @@ const BaveragesCategory = async () => {
                   <AddtoCartBtn product={product} />
                 </div>
               </div>
-            </Link>
           </div>
 
         ))

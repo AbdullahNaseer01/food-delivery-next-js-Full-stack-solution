@@ -86,6 +86,7 @@ const GridSection = async () => {
                             title={product.title}
                             imageUrl={product.image}
                             price={product.price}
+                            product={product}
                         />
                     ))
                 }

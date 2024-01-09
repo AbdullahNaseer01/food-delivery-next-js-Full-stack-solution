@@ -12,6 +12,7 @@ import BurgerCategory from '../(components)/BurgerCagtegory';
 const page =  () => {
   return (
     <>
+    <main className=' mt-3'>
     <FeaturedCategory/>
     <DealsCategory/>
     <BurgerCategory/>
@@ -19,6 +20,8 @@ const page =  () => {
     <PastaCategory/>
     <BaveragesCategory/>
     <SideCategory/>
+    </main>
+    
     </>
     
 

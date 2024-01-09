@@ -160,6 +160,7 @@
 
 
 import React, { useState, useEffect } from 'react';
+import { AiOutlineDelete } from "react-icons/ai";
 
 const AddtoCartBtn = ({ product }) => {
     if (!product) {
@@ -207,7 +208,7 @@ const AddtoCartBtn = ({ product }) => {
         }
     };
 
-    const handleClickAdd = () => {
+    const handleClickAdd = (e) => {
         setQuantity(quantity + 1);
     };
 
@@ -250,7 +251,7 @@ const AddtoCartBtn = ({ product }) => {
                         className="bg-gray-200 text-gray-700 px-2 py-1 rounded-l-full"
                         onClick={handleRemoveFromCart}
                     >
-                        {quantity === 1 ? 'Remove' : '-'}
+                        {quantity === 1 ? <span className=' text-xl py-2 font-semibold '><AiOutlineDelete/></span> : '-'}
                     </button>
                     <span className="mx-2">{quantity}</span>
                     <button className="bg-customOrange text-white px-2 py-1 rounded-r-full" onClick={handleClickAdd}>

@@ -1,12 +1,18 @@
 "use client"
 import {signOut} from "next-auth/react"
+import { useRouter } from 'next/navigation'
 const LogoutBtn = () => {
+  const router = useRouter()
+   const logOut = ()=>{
+    signOut()
+    router.push("/")
+   }
   return (
     <div className="p-4">
             <button
               type="button"
               className="inline-flex items-center justify-center h-9 px-4 rounded-xl bg-gray-900 text-gray-300 hover:text-white text-sm font-semibold transition"
-              onClick={()=>{signOut()}}
+              onClick={()=>{logOut()}}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

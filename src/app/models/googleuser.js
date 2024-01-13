@@ -11,17 +11,10 @@ const userSchema = new mongoose.Schema({
         unique: true,
         required: true,
     },
-    password: {
-        type: String,
-        required: true,
-    },
-    // password: {
-    //     type: String,
-    //     // required: true,
-    // },
     address: String,
     phoneNumber: String,
+    role: String,
 });
 
 
-export const User = mongoose.models.User || mongoose.model("User", userSchema);
+export const googleUser = mongoose.models.googleUser || mongoose.model("googleUser", userSchema);

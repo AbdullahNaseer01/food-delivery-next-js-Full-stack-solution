@@ -121,6 +121,42 @@ const authOption = {
         })
     ],
     callbacks: {
+        async signIn({ user, profile, account, credentials }) {
+            if (account.provider === "google") {
+                console.log("nextuaht callback hit")
+                console.log("google profile:", profile)
+                try {
+                    const existingUser = await User.findOne({ email: profile.email });
+                    if (existingUser) {
+                        return existingUser; // User already exists, return it
+                    }
+
+                    // Create a new user using the API
+                    const response = await fetch('http://localhost:3000/api/googleuser', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            username: profile.name,
+                            email: profile.email,
+                            // Add other relevant fields from the profile
+                        })
+                    });
+
+                    if (response.ok) {
+                        const newUser = await response.json();
+                        return newUser; // Return the newly created user
+                    } else {
+                        console.error('Failed to create user:', response.statusText);
+                        return null; // Handle the error appropriately
+                    }
+                } catch (error) {
+                    console.error('Error creating user:', error);
+                    return null; // Handle the error gracefully
+                }
+            }
+
+            return true; // Continue with default behavior for other providers
+        },
         async jwt({ token, user }) {
             if (user) token.role = user.role
             return token
@@ -130,6 +166,9 @@ const authOption = {
             return session
         }
     }
+    // ... other NextAuth configuration
+
+
 }
 
 const handler = NextAuth(authOption);

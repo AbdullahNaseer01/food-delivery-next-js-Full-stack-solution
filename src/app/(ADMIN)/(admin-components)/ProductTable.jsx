@@ -31,25 +31,25 @@ const ProductTable = async () => {
               scope="col"
               className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
             >
-              Title
+              Category
             </th>
             <th
               scope="col"
               className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
             >
-              Status
+              Price
             </th>
             <th
               scope="col"
               className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
             >
-              Role
+              Description
             </th>
             <th
               scope="col"
               className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
             >
-              Email
+              Product ID
             </th>
             <th
               scope="col"
@@ -74,7 +74,7 @@ const ProductTable = async () => {
                     </div>
                     <div className="ml-4">
                       <div className="text-sm font-medium text-gray-900">{product.title}</div>
-                      <div className="text-sm text-gray-500">{product.description}</div>
+                      <div className="text-sm text-gray-500">{product.tagline}</div>
                     </div>
                   </div>
                 </td>
@@ -86,14 +86,14 @@ const ProductTable = async () => {
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                    {product.tagline}
+                    {product.price}
                   </span>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {product.price}
+                  {product.description}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  jane.cooper@example.com
+                  {product._id}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap  text-sm font-medium">
                   <a href="#" className="text-indigo-600 hover:text-indigo-900">

@@ -473,7 +473,7 @@ const handleAddProduct = async (event) => {
                     >
                         {loading ? (
                             <div>
-                                Adding Don't Leave the Page
+                                Adding Dont Leave the Page
                                 <span className="text-2xl"><LuLoader /></span>
                             </div>
                         ) : (

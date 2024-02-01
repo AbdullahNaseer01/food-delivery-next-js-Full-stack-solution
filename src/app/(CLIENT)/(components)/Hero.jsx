@@ -17,7 +17,7 @@ const Hero = () => {
                         />
                     </div>
                     <div className="herotext text-7xl font-bold mt-5 leading-snug">The Fastest <br/> Delivery <br /> In <span className='text-customOrange'>Your City</span></div>
-                    <div className='md:mr-48 mt-2'>  repellendus explicabo aut nostrum eius voluptatem quia impedit laboriosam consectetur consequuntur, magni iste officia eveniet iusto libero vel. Expedita totam corrupti magni veniam velit!</div>
+                    <div className='md:mr-48 mt-2'>  repellendus explicabo aut nostrum eius voluptatem quia impedit laboriosam consectetur consequuntur magni iste officia eveniet iusto libero vel. Expedita totam corrupti magni veniam velit</div>
                     <div className="buttons md:flex mt-2">
                         <button className='bg-gradient-to-b from-orange-300 to-orange-400 text-white px-16 py-5 mt-3 scroll-py-2 rounded-md'>Order Now</button>
                         <button className="flex justify-between mx-auto md:mx-0 mb-3">

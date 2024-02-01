@@ -232,6 +232,7 @@
 import { useState , useEffect } from 'react';
 import { FaOpencart } from "react-icons/fa6";
 import { LuLoader } from "react-icons/lu";
+import { toast } from 'react-toastify';
 
 const AddProductForm = () => {
     const [loading, setLoading] = useState(false);
@@ -308,7 +309,6 @@ const AddProductForm = () => {
 
 const handleAddProduct = async (event) => {
     event.preventDefault();
-    
     try {
         const imageUrl = await imageUplaod();
         
@@ -329,13 +329,17 @@ const handleAddProduct = async (event) => {
         if (response.ok) {
             // API call successful, handle success case
             console.log("API call successful");
+            toast.success("Product Added Successfully 🙂")
         } else {
             // API call failed, handle error case
             console.error("API call failed:", response.status, response.statusText);
+            toast.error("Something Went Wrong! 😭")
         }
     } catch (error) {
         // Handle any network or other errors
         console.error("Error in API call:", error);
+        toast.error("Something Went Wrong! 😭")
+
     }
 };
 

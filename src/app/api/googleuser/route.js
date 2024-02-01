@@ -5,6 +5,7 @@ import { NextResponse } from 'next/server';
 dbConnect();
 
 export async function POST(req, res) {
+    console.log("apu hit")
     try {
         const payload = await req.json();
         // Check if the email already exists in the database

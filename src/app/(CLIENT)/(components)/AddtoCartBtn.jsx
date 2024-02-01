@@ -274,7 +274,7 @@
 
 
 
-
+"use client"
 import React, { useState, useEffect } from 'react';
 import { AiOutlineDelete } from "react-icons/ai";
 

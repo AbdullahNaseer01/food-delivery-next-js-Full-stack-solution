@@ -13,6 +13,37 @@ const CartPage = () => {
     setCartItems(storedCartItems);
   }, []);
 
+  const checkout = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/api/order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          customerName: 'John Doe', // Replace with actual customer name
+          items: cartItems, // Assuming you have access to cartItems in this component
+          deliveryAddress: {
+            street: '123 Main St', // Replace with actual delivery address
+            city: 'Example City', // Replace with actual delivery address
+          },
+        }),
+      });
+      if (response.ok) {
+        // Order successfully created
+        // You can redirect the user to a confirmation page or perform other actions
+        console.log('Order successfully created');
+      } else {
+        throw new Error('Failed to create order');
+      }
+    } catch (error) {
+      console.error(error);
+      // Handle error
+    }
+  };
+  
+  console.log("cartitems", cartItems)
+
   const updateCartItemQuantity = (productId, newQuantity) => {
     if (newQuantity <= 0) {
       removeFromCart(productId);
@@ -45,7 +76,7 @@ const CartPage = () => {
       {cartItems.length === 0 ? (
         <div className="text-center">
           <NothingInCart/>
-          {/* Add your animations or messages for an empty cart */}
+          {/*  animations or messages for an empty cart */}
         </div>
       ) : (
         <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
@@ -138,7 +169,7 @@ const CartPage = () => {
                 <p className="text-sm text-gray-700">including VAT</p>
               </div>
             </div>
-            <button className="mt-6 w-full rounded-md bg-customOrange py-1.5 font-medium text-blue-50 hover:bg-customLightOrange">
+            <button onClick={checkout} className="mt-6 w-full rounded-md bg-customOrange py-1.5 font-medium text-blue-50 hover:bg-customLightOrange">
               Check out
             </button>
           </div>
